@@ -73,17 +73,17 @@ A Minecraft plugin that lets you watch specific blocks and get Discord alerts wh
 
 ## Configuration
 
-You need to set your Discord webhook URL in the source code.
+You need to set your Discord webhook URL in the config.yml.
 
-1. **Open the Source Code:**
-   - Find the part of the code where `webhookUrl` is set (within the `BlockInteractionListener.java` class.
+1. **Run the server, open monitorblock folder within plugins and enter config.yml :**
+   - Find the part of the code where `webhook-url` is set (within the `config.yml` file.
 
 2. **Set the Webhook URL:**
    - Replace `YOUR_WEBHOOK_URL` value with your Discord webhook link.
    - It should look like this:
+`
+webhook-url: "YOUR_DISCORD_WEBHOOK_URL" `
 
-   ```java
-   String webhookUrl = "https://discord.com/api/webhooks/your/webhook/url";
 
 # Note
 - this is intended for minecraft 1.21.1. Join https://discord.gg/weezers and dm forniee#0000 if you'd like to request a version higher or lower.
