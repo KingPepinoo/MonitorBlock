@@ -105,20 +105,25 @@ public class BlockInteractionListener implements Listener {
     }
 
     private void sendDiscordMessage(String playerName, MonitoredBlock monitoredBlock, String interactionType) {
-        String webhookUrl = "YOUR_WEBHOOK_URL"; // Replace with your webhook URL
+        String webhookUrl = plugin.getWebhookUrl();
+
+        if (webhookUrl == null || webhookUrl.isEmpty() || webhookUrl.equalsIgnoreCase("YOUR_DISCORD_WEBHOOK_URL")) {
+            plugin.getLogger().warning("Webhook URL is not set or invalid. Please set it in the config.yml file.");
+            return;
+        }
 
         Vector coords = monitoredBlock.getLocation().toVector();
         String blockType = monitoredBlock.getBlockType().toString();
 
         String jsonPayload = String.format("{\"embeds\": [{"
-                        + "\"title\": \"%s has been interacted with!\","
-                        + "\"color\": 5814783,"
-                        + "\"fields\": ["
-                        + "{\"name\": \"Player\", \"value\": \"%s\", \"inline\": true},"
-                        + "{\"name\": \"Coordinates\", \"value\": \"%s\", \"inline\": true},"
-                        + "{\"name\": \"Block Type\", \"value\": \"%s\", \"inline\": true},"
-                        + "{\"name\": \"Interaction Type\", \"value\": \"%s\", \"inline\": true}"
-                        + "]}]}",
+                + "\"title\": \"%s has been interacted with!\","
+                + "\"color\": 5814783,"
+                + "\"fields\": ["
+                + "{\"name\": \"Player\", \"value\": \"%s\", \"inline\": true},"
+                + "{\"name\": \"Coordinates\", \"value\": \"%s\", \"inline\": true},"
+                + "{\"name\": \"Block Type\", \"value\": \"%s\", \"inline\": true},"
+                + "{\"name\": \"Interaction Type\", \"value\": \"%s\", \"inline\": true}"
+                + "]}]}",
                 escapeJson(monitoredBlock.getName()),
                 escapeJson(playerName),
                 escapeJson(coords.toString()),
