@@ -1,0 +1,5 @@
+# MonitorBlock Configuration
+
+# The Discord webhook URL to send messages to.
+# Replace "YOUR_DISCORD_WEBHOOK_URL" with your actual webhook URL.
+webhook-url: "YOUR_DISCORD_WEBHOOK_URL"
