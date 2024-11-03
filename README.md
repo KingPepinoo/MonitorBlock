@@ -26,17 +26,17 @@ A Minecraft plugin that lets you watch specific blocks and get Discord alerts wh
 ## Installation
 
 1. **Build the Plugin:**
-   - You need to build the plugin yourself from the source code.
+   - You need to build the plugin yourself from the source code, or get it from https://modrinth.com/plugin/monitorblock/versions.
 
 2. **Place in Plugins Folder:**
    - After building, put the `jar` file into your server's `plugins` folder.
 
 3. **Set Up the Webhook:**
-   - Open the source code file where the webhook URL is set.
+   - Open the config.yml file where the webhook URL is set.
    - Find the line that has `webhookUrl` and change it to your Discord webhook URL.
 
 4. **Start the Server:**
-   - Start your Minecraft server.
+   - Restart your Minecraft server.
    - The plugin should now work.
 
 ## Usage
