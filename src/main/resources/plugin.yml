@@ -1,38 +1,14 @@
-name: ArmorDrain
-version: '1.0-SNAPSHOT'
-main: pepino.herobane.armorDrain.ArmorDrain
-api-version: '1.21'
-load: STARTUP
-authors: [ TheNailpepino, Herobanenair ]
-description: A plugin that manages armor durability during combat for Marlowww.
-website: https://github.com/HerobaneNair/ArmorDrain-1
-
+name: MonitorBlock
+version: 1.0
+main: com.pepino.monitorblock.MonitorBlock
+api-version: 1.20
 commands:
-  armordrain_toggle:
-    description: Toggles the ArmorDrain plugin on or off.
-    usage: /armordrain_toggle [on/off]
-    permission: armordrain.use
-    permission-message: You don't have permission to use this command.
-  armordrain_interacttime:
-    description: Sets the combat tag duration.
-    usage: /armordrain_interacttime <seconds>
-    permission: armordrain.use
-    permission-message: You don't have permission to use this command.
-  armordrain_threshold:
-    description: Sets the durability threshold.
-    usage: /armordrain_threshold <number>
-    permission: armordrain.use
-    permission-message: You don't have permission to use this command.
-  armordrain_display:
-    description: Toggles the display info to player.
-    usage: /armordrain_display [on/off]
-  armordrain_mode:
-    description: Sets the combat mode.
-    usage: /armordrain_mode <PLAYER_ONLY|ALL|ARMOR_ONLY>
-    permission: armordrain.use
-    permission-message: You don't have permission to use this command.
-
+  monitorblock:
+    description: Gives you a MonitorBlock wand to monitor blocks
+    usage: /monitorblock <name>
+    permission: monitorblock.use
+    permission-message: You do not have permission to use this command.
 permissions:
-  armordrain.use:
-    description: Allows use of ArmorDrain admin commands.
+  monitorblock.use:
+    description: Allows the use of the /monitorblock command.
     default: op
